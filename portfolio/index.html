@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vishakha Mehta - Portfolio</title>
+<meta name="description" content="Vishakha Mehta, Salesforce Developer. Apex, LWC, Flow and Experience Cloud.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--ink:#1c1c28;--muted:#5f6272;--champ:#F7E8D0;--champ2:#EFD3A8;--accent:#1c1c28;--line:#ece6dc}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.7;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid #e3a04a;outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+
+/* top bar */
+.top{display:flex;justify-content:space-between;align-items:center;padding:26px 0}
+.top .mail{font-weight:600;text-decoration:none}
+.top nav{display:flex;gap:34px}
+.top nav a{text-decoration:none;font-weight:500}
+.top nav a:hover,.top .mail:hover{color:#c98a2e}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;padding:40px 0 100px}
+.hero h3{font-size:1.5rem;font-weight:600}
+.hero h1{font-size:clamp(2.4rem,5.5vw,4.1rem);font-weight:800;line-height:1.1;margin:10px 0 22px}
+.hero p{color:var(--muted);max-width:46ch}
+.hero p b{color:var(--ink)}
+.pill{display:inline-block;margin-top:30px;padding:15px 34px;border-radius:50px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:.9rem;letter-spacing:.06em;transition:transform .2s,background .2s}
+.pill:hover{transform:translateY(-3px);background:#c98a2e}
+.photo {
+  position: relative;
+  justify-self: center;
+  width: min(430px, 86vw);
+  aspect-ratio: 1;
+}
+
+.photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--champ);
+}
+
+.photo::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  right: -25px;
+  top: 25px;
+  border-radius: 50%;
+  background: var(--champ2);
+}
+
+.photo img {
+  position: absolute;
+  width: 82%;
+  height: 82%;
+  left: 9%;
+  top: 9%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  z-index: 2;
+  border: 6px solid white;
+}
+
+.photo .ph {
+  position: absolute;
+  width: 82%;
+  height: 82%;
+  left: 9%;
+  top: 9%;
+  display: none;
+  place-items: center;
+  border-radius: 50%;
+  background: white;
+  color: #c98a2e;
+  font-size: 5rem;
+  font-weight: 800;
+  z-index: 2;
+}
+/* resume */
+.resume{background:#fff;padding:40px 0 90px}
+.sec-title{text-align:center;font-size:2.6rem;font-weight:800}
+.under{display:block;margin:6px auto 0;width:120px;height:10px}
+.block{margin-top:70px}
+.block h3{font-size:1.5rem;font-weight:700}
+.block .under{margin:4px 0 24px;width:90px}
+.row{display:grid;grid-template-columns:1.2fr 1.4fr 1fr;gap:20px;padding:20px 24px;border-radius:14px;transition:background .2s}
+.row:hover{background:var(--champ)}
+.row+.row{margin-top:6px}
+.row b{font-weight:600}
+.row span{color:var(--muted)}
+.row .when{text-align:right;color:var(--muted);font-size:.92rem}
+.proj{padding:20px 24px;border-radius:14px}
+.proj:hover{background:var(--champ)}
+.proj h4{font-size:1.1rem;font-weight:600}
+.proj em{font-style:normal;color:var(--muted);font-size:.9rem}
+.proj p{color:var(--muted);margin-top:6px;max-width:80ch}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:30px;margin-top:10px}
+.skills h4{font-size:1.1rem;font-weight:600;margin-bottom:10px}
+.skills ul{list-style:none;padding:0}
+.skills li{color:var(--muted);padding-left:20px;position:relative}
+.skills li::before{content:"";position:absolute;left:0;top:.7em;width:8px;height:8px;border-radius:50%;background:var(--champ2)}
+
+/* contact */
+.contact{background:var(--champ);position:relative;overflow:hidden;padding:90px 0;text-align:center}
+.contact .av{width:96px;height:96px;border-radius:50%;background:#fff;margin:0 auto 14px;display:grid;place-items:center;font-weight:800;font-size:2rem;color:#c98a2e;overflow:hidden}
+.contact .av img{width:100%;height:100%;object-fit:cover}
+.contact small{font-weight:600;color:#c98a2e;font-size:1rem}
+.contact h2{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;line-height:1.15;margin:6px 0 20px}
+.contact h2 a{text-decoration:underline;text-decoration-thickness:5px;text-underline-offset:8px;text-decoration-color:#e3a04a}
+.contact h2 a:hover{color:#c98a2e}
+.contact p{max-width:58ch;margin:0 auto 18px;color:var(--muted)}
+.contact .link{font-weight:600;text-decoration:none;word-break:break-all}
+.circ{position:absolute;border-radius:50%;background:var(--champ2);opacity:.55}
+.c1{width:220px;height:220px;left:-70px;top:30px}.c2{width:300px;height:300px;right:-100px;bottom:-110px}
+.social{display:flex;justify-content:center;gap:16px;margin-top:34px;position:relative}
+.social a{width:46px;height:46px;border-radius:50%;background:#fff;display:grid;place-items:center;transition:transform .2s,background .2s}
+.social a:hover{transform:translateY(-4px);background:var(--ink)}
+.social a:hover svg{stroke:#fff}
+.social svg{width:20px;height:20px;fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.mail2{margin-top:26px;position:relative;font-weight:500}
+footer{text-align:center;padding:22px;font-size:.85rem;color:var(--muted)}
+
+@media(max-width:800px){
+  .top{flex-direction:column;gap:12px}
+  .hero{grid-template-columns:1fr;text-align:center;padding-bottom:70px}
+  .hero p{margin:0 auto}
+  .photo{order:-1}
+  .row{grid-template-columns:1fr;gap:2px}.row .when{text-align:left}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="top">
+    <a class="mail" href="mailto:vishakhamehta848@gmail.com">vishakhamehta848@gmail.com</a>
+    <nav aria-label="Main">
+      <a href="#About">About</a>
+      <a href="files/Vishakha_Mehta_Resume.pdf">Resume</a>
+      <a href="#Contact">Contact</a>
+    </nav>
+  </div>
+
+  <section class="hero" id="About">
+    <div>
+      <h3>Hi, I'm Vishakha Mehta</h3>
+      <h1>Build, Automate, Innovate, Repeat</h1>
+      <p>A <b>Salesforce Developer</b> with 1+ years of experience, currently working at Avatu. Building with Apex, Lightning Web Components and Flow across Sales, Service and Experience Cloud. <b>Platform Developer I</b> certified.</p>
+      <a class="pill" href="https://www.linkedin.com/in/vishakha-mehta08/">CONNECT WITH ME</a>
+    </div>
+    <div class="photo">
+  <img 
+    src="images/profile.jpg" 
+    alt="Vishakha Mehta"
+    onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"
+  >
+  <div class="ph" aria-hidden="true">VM</div>
+</div>
+  </section>
+</div>
+
+<section class="resume" id="Resume">
+  <div class="wrap">
+    <h2 class="sec-title">Resume</h2>
+    <svg class="under" viewBox="0 0 120 10" aria-hidden="true"><path d="M2 6 Q 20 0 40 5 T 80 5 T 118 4" fill="none" stroke="#e3a04a" stroke-width="4" stroke-linecap="round"/></svg>
+
+    <div class="block">
+      <h3>Work Experience</h3>
+      <svg class="under" viewBox="0 0 90 10" aria-hidden="true"><path d="M2 6 Q 15 1 30 5 T 60 5 T 88 4" fill="none" stroke="#e3a04a" stroke-width="4" stroke-linecap="round"/></svg>
+      <div class="row"><b>Avatu Pvt Ltd</b><span>Salesforce Developer</span><span class="when">August 2025 - Present</span></div>
+      <div class="proj">
+        <p>Develop custom Salesforce solutions with Apex and LWC, following bulkification and governor-limit best practices. Configure and administer Profiles, Permission Sets, Sharing Rules and Approval Processes. Build REST API integrations with Named Credentials and External Services, and manage data migration and integrity with Data Loader.</p>
+      </div>
+    </div>
+
+    <div class="block">
+      <h3>Key Projects</h3>
+      <svg class="under" viewBox="0 0 90 10" aria-hidden="true"><path d="M2 6 Q 15 1 30 5 T 60 5 T 88 4" fill="none" stroke="#e3a04a" stroke-width="4" stroke-linecap="round"/></svg>
+      <div class="proj"><h4>B2B Logistics Portal <em>Experience Cloud</em></h4><p>End-to-end customer journey for a shipping and logistics company: company onboarding, self-registration, RFQ submission, quote management and order history. Parent/Child account hierarchy (PAN and GSTIN), a registration flow that provisions Account, Contact and User with Profile and Permission Set, and a My Quotes feature with accept/decline and status-based guardrails.</p></div>
+      <div class="proj"><h4>Reusable LWC Component Library <em>100+ components</em></h4><p>Internal library of configurable, dynamic components (data tables, charts, PDF viewer, error handling) with no hardcoded data. FLS and CRUD security enforced, with SObject-agnostic Apex controllers.</p></div>
+      <div class="proj"><h4>Rollup Helper <em>Apex, Batch, Custom Metadata</em></h4><p>Configuration-driven rollup framework supporting SUM, COUNT, MIN, MAX and AVG beyond master-detail limits, with bulkified triggers plus Batch Apex and scheduled jobs for large data volumes.</p></div>
+      <div class="proj"><h4>Agentforce Implementation: Avatu Sales <em>Sales Cloud</em></h4><p>Automates the Lead, Opportunity, Quote and Asset lifecycle with Apex and Flows, including rule-based agent assignment, automated status updates and manager notifications.</p></div>
+    </div>
+
+    <div class="block">
+      <h3>Education</h3>
+      <svg class="under" viewBox="0 0 90 10" aria-hidden="true"><path d="M2 6 Q 15 1 30 5 T 60 5 T 88 4" fill="none" stroke="#e3a04a" stroke-width="4" stroke-linecap="round"/></svg>
+      <div class="row"><b>Arya College of Engineering and I.T.</b><span>B.Tech, Rajasthan Technical University (CGPA 9.20)</span><span class="when">2025</span></div>
+      <div class="row"><b>Vyas Academy Senior Secondary School</b><span>Senior Secondary (XII), RBSE (97.80%)</span><span class="when">2021</span></div>
+      <div class="row"><b>Vyas Academy Senior Secondary School</b><span>Secondary (X), RBSE (85.33%)</span><span class="when">2019</span></div>
+    </div>
+
+    <div class="block">
+      <h3>Certifications</h3>
+      <svg class="under" viewBox="0 0 90 10" aria-hidden="true"><path d="M2 6 Q 15 1 30 5 T 60 5 T 88 4" fill="none" stroke="#e3a04a" stroke-width="4" stroke-linecap="round"/></svg>
+      <div class="row"><b>Salesforce Certified Platform Developer I (PD1)</b><span></span><span class="when"></span></div>
+    </div>
+
+    <div class="block">
+      <h3>Skills</h3>
+      <svg class="under" viewBox="0 0 90 10" aria-hidden="true"><path d="M2 6 Q 15 1 30 5 T 60 5 T 88 4" fill="none" stroke="#e3a04a" stroke-width="4" stroke-linecap="round"/></svg>
+      <div class="skills">
+        <div><h4>Development</h4><ul><li>Apex (Classes, Triggers, Batch)</li><li>Lightning Web Components</li><li>JavaScript</li><li>SOQL / SOSL</li></ul></div>
+        <div><h4>Integration</h4><ul><li>REST / SOAP APIs</li><li>Named Credentials</li><li>External Services</li><li>JSON / XML, Postman</li></ul></div>
+        <div><h4>Automation &amp; Admin</h4><ul><li>Flow Builder, Process Builder</li><li>Approval Processes</li><li>Profiles &amp; Permission Sets</li><li>Sharing &amp; Validation Rules</li></ul></div>
+        <div><h4>Clouds &amp; Platform</h4><ul><li>Sales, Service, Experience Cloud</li><li>Agentforce</li><li>Revenue Cloud</li></ul></div>
+        <div><h4>Tools &amp; Practices</h4><ul><li>Salesforce CLI, VS Code, Git</li><li>Data Loader, Change Sets, Sandboxes</li><li>Governor-limit optimization</li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="Contact">
+  <span class="circ c1"></span><span class="circ c2"></span>
+  <div class="wrap" style="position:relative">
+    <div class="av"><img src="images/avatar.png" alt="" onerror="this.remove();this.parentNode.textContent='VM'"></div>
+    <small>Catch me!</small>
+    <h2>Got an idea? <a href="mailto:vishakhamehta848@gmail.com">Let's Talk!</a></h2>
+    <p>I'm open to Salesforce developer roles and projects. Whether you have a question or just want to say hi, my inbox is open and I'll get back to you.</p>
+    <a class="link" href="https://www.linkedin.com/in/vishakha-mehta08/">https://www.linkedin.com/in/vishakha-mehta08/</a>
+    <div class="social">
+      <a href="https://www.linkedin.com/in/vishakha-mehta08/" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4 9h4v11H4zM6 4a2 2 0 100 4 2 2 0 000-4zM10 9h4v2c1-3 7-3 7 2v7h-4v-6c0-3-3-3-3 0v6h-4z"/></svg></a>
+      <a href="https://github.com/Vishakha1001" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 00-1-2.6c3.1-.3 6.4-1.5 6.4-7A5.4 5.4 0 0020 4.8 5 5 0 0019.900 1S18.700.7 16 2.500a13.400 13.400 0 00-7 0C6.300.7 5.100 1 5.100 1A5 5 0 005 4.800 5.400 5.400 0 003.600 8.500c0 5.400 3.300 6.600 6.400 7a3.400 3.400 0 00-1 2.600V22"/></svg></a>
+      <a href="mailto:vishakhamehta848@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+    </div>
+    <p class="mail2"><a href="mailto:vishakhamehta848@gmail.com">vishakhamehta848@gmail.com</a></p>
+  </div>
+</section>
+
+<footer>&copy; <span id="y"></span> Vishakha Mehta</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
